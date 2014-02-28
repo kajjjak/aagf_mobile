@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> c
+        <link rel='stylesheet' type='text/css' href='css/index.css' />
+        <link href='css/mapbox.css' rel='stylesheet' />
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+        <style>
+
+            .attraction_undefined .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px; 
+                z-index: -9999; 
+            }
+            .attraction_undefined .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/star-3.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_0 .label{ 
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }
+            .attraction_0 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/star-3.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_1 .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }            
+            .attraction_1 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/statue-2.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_2 .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }                       
+            .attraction_2 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/forest2.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_3 .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }                       
+            .attraction_3 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/moderntower.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_4 .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }                       
+            .attraction_4 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/river-2.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+            .attraction_5 .label{
+                width: 51px;
+                height: 37px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/shadow.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 19px;
+                left: 0px;
+                right: 0px;
+                left: 0px;
+                z-index: -9999;
+            }                       
+            .attraction_5 .body {
+                width: 40px;
+                height: 40px;
+                background: url(http://utikennsluapp.agamecompany.com/utikennsluapp2/_design/media/river-2.png) no-repeat center;
+                margin: auto;
+                position: absolute;
+                top: 0px;
+                bottom: 20px;
+                left: 0px;
+                right: 0px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div data-role="page" data-theme="a" id="page_map">
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <a id="navigation_button" class="fix_button" href="#" data-shadow="false" data-iconshadow="false" data-icon="navigation" data-iconpos="notext" data-ajax="false">navigate</a>
+                <h1>ÚtikennsluApp</h1>
+                <a class="fix_button page_books_button" href="#page_books" data-shadow="false" data-iconshadow="false" data-icon="location" data-iconpos="notext">Menu</a>
+            </div><!-- /header -->
+            <div data-role="content" class="ui-content-map">
+                <div id='map'></div>
+            </div><!-- /content -->  
+        </div><!-- /page -->  
+
+        <div data-role="page" data-theme="a" id="page_books">
+
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <h1>Bækur</h1>
+                <a class="fix_button page_map_button" href="#page_map" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-ajax="false">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="menu_route_books"></ul> 
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><button type="v" data-theme="c" onClick="buildBookMenu(true);"><div id="menu_route_books_update_button">Uppfæra lista</div></button></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><button  class="page_map_button" type="v" data-theme="c">Skoða kort</button></div>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->  
+
+        <div data-role="page" data-theme="a" id="page_areas">
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <h1>Svæði</h1>
+                <a class="fix_button" href="#page_books" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-ajax="false">Back</a>
+            </div><!-- /header -->
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="menu_route_areas"></ul> 
+                <div class="ui-grid-solo"> 
+                    <div class="ui-block-a"><button type="v" data-theme="d" href="#" onClick="history.go(-1);">Til baka</button></div>
+                </div>                
+            </div><!-- /content -->
+        </div><!-- /page -->  
+
+        <div data-role="page" data-theme="a" id="page_paths">
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <h1>Leiðir</h1>
+                <a class="fix_button page_areas_button" href="#page_areas" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-ajax="false">Back</a>
+            </div><!-- /header -->
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="menu_route_paths"></ul> 
+                <div class="ui-grid-solo"> 
+                    <div class="ui-block-a"><button type="v" data-theme="d" href="#page_areas" onClick="history.go(-1);">Til baka</button></div>
+                </div>                
+            </div><!-- /content -->
+        </div><!-- /page -->  
+       
+        </div>!-- /page -->  
+        <div data-role="page" data-theme="a" id="page_item">
+
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <h1>Gönguleið</h1>
+                <a class="fix_button" href="javascript:addMapItem()" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-rel="back" data-ajax="false">Back</a>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h1 id="item_view_name"></h1>
+                <center><img id="item_view_image" src=""/></center>
+                <p id="item_view_summary"></p>
+                <p id="item_view_description"></p>
+                <input id="item_view_selected" type="hidden" value="" />
+                <p id="item_view_notice"></p>
+                <div class="ui-grid-solo">                    
+                    <div class="ui-block-a"><button class="page_path_button" type="v" data-theme="b" id="item_view_button_show">Skoða leið</button></div>
+                </div>
+                <div class="ui-grid-solo">                    
+                    <div class="ui-block-a"><button class="page_walk_button" type="v" data-theme="b" id="item_view_button_show">Labba leið</button></div>
+                </div>                
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <button type="v" data-theme="b" onClick="askToPath()" id="item_view_button_save"><div id="item_view_isowner">Vista leið</div></button>
+                    </div>
+                </div><!-- /grid-a -->                
+                <div class="ui-grid-solo"> 
+                    <div class="ui-block-a"><button type="v" data-theme="d" href="#page_paths" onClick="history.go(-1);">Til baka</button></div>
+                </div>
+            </div><!-- /content -->            
+        </div><!-- /page -->     
+        <div data-role="page" data-theme="a" id="page_attraction">
+
+            <div class="fix_header" data-id="allot_header" data-role="header" data-position="fixed">
+                <h1>Meira upplýsingar</h1>
+                <a class="fix_button" href="#page_map" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-rel="back" data-ajax="false">Back</a>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h1 id="item_attraction_name"></h1>
+                <center><img id="item_attraction_image" src=""/></center>
+                <p id="item_attraction_description"></p>
+                <div class="ui-grid-solo"> 
+                    <div class="ui-block-a"><button class="page_map_button" type="v" data-theme="b" href="#page_map">Til baka</button></div>
+                </div>
+            </div><!-- /content -->            
+        </div><!-- /page -->     
+                  
+        <!--script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type='text/javascript' src='WikitudePlugin.js'></script -->
+        <script type='text/javascript' src='js/lib/mapbox.js'></script>
+        <script type='text/javascript' src='js/lib/leaflet.functionaltilelayer.js'></script>
+        <script type='text/javascript' src='js/lib/mapbox_offline.js'></script>
+        <script type='text/javascript' src='js/lib/zepto.js'></script>
+        <script type='text/javascript' src='js/lib/zepto-onpress.js'></script>
+        <script type='text/javascript' src='js/lib/mgl.js'></script>
+        <script type='text/javascript' src='js/lib/mglutils.js'></script>
+        <script type='text/javascript' src='js/lib/load-image.min.js'></script>
+        <script type='text/javascript' src='js/gamemap.js'></script>
+        <script type="text/javascript">
+
+            jQuery.mobile.defaultPageTransition = "none";
+
+            window.map = loadMap();
+            document.addEventListener('deviceready', onDeviceReady, false);
+            $(document).on('pageinit', '#page_map', function(){  
+                onDeviceReady();
+
+            });
+
+        </script>
+        <!-- begin -->
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type='text/javascript' src='js/lib/zepto.js'></script>
+        <script type='text/javascript' src='js/lib/zepto-onpress.js'></script>
+        <script type='text/javascript' src='data/attractions.js'></script>
+        <script type='application/javascript' src='js/lib/fastclick.js'></script>
+        <script type="text/javascript">
+        /* the code fucks up old versions of echma script *
+            window.addEventListener('load', function() {
+                FastClick.attach(document.body);
+            }, false);
+            //app.initialize();
+        /**/
+        </script>
+        
+        <!-- ends -->
+    </body>
+</html>
