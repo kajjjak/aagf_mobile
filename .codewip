@@ -1,0 +1,42 @@
+{
+  "name": "Utikennsluapp Mobile",
+  "version": "master",
+  "deployer": "oR4Map2z8",
+  "plugins": {
+    "oR4Map2z8": {
+      "server": "http://54.249.246.189/",
+      "username": "",
+      "password": "",
+      "database": "utikennsluapp2",
+      "preview": "mobile"
+    },
+    "bJ4feaAMu": {
+      "name": "Javascript"
+    },
+    "TL8ml51mE": {
+      "name": "CSS"
+    },
+    "ySC3tRlCN": {
+      "name": "Markdown"
+    },
+    "ASYeE4C1n": {
+      "name": "HTML preview"
+    },
+    "PG4U8wocc": {
+      "name": "HTML"
+    },
+    "github": {
+      "repobranch": "master",
+      "username": "",
+      "password": "",
+      "reponame": "aagf_mobile",
+      "repouser": "kajjjak",
+      "repopush_comment": "Initial"
+    }
+  },
+  "created": 1393517580041,
+  "updated": 1393517580041,
+  "private": false,
+  "fork_id": "1dQlfKOCo",
+  "description": "New version for Náturuskólin"
+}
