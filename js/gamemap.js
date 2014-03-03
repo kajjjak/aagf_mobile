@@ -506,7 +506,9 @@ function fetchRoutePath(path_name, callback_success){
   var urldb = "http://54.249.245.7/utikennsluapp/"; //"utikennsluapp.agamecompany.com";
   console.info("Updating path " + urldb + path_name);
   $.getJSON(urldb + path_name, function(route_path){
-    ///$.extend(routes , route_menu["menu"]);
+    route_path = JSON.stringify(route_path);
+    route_path = route_path.replace(/=\\"\media/g, '=\\"/__db/_design/media');
+    route_path = JSON.parse(route_path);
     prepData(path_name, route_path, window.game_items);
     localStorage.setItem(path_name, JSON.stringify(route_path));
     callback_success(route_path);
